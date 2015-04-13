@@ -1,22 +1,25 @@
 import psycopg2
 import psycopg2.extras
+import geocoder
 
-from pygeocoder import Geocoder
+from places import place
 
 class Locations:
     def __init__(self):
-        self.cache=dict()
+        self.cache = dict()
+        self.places = dict()
     
     def find(self, lat, lng):
         id = "%f,%f" % (lat, lng)
         if id in self.cache:
             return self.cache[id]
-        address = Geocoder.reverse_geocode(lat, lng)
+        address = geocoder.here([lat, lng], method='reverse')
         if address == None:
             self.cache[id] = None
             return None
-        self.cache[id] = (address.city, address.state)
+        self.cache[id] = place((address.city, address.state, address.country))
         return self.cache[id]
+
 
 try:
     conn = psycopg2.connect("dbname=photo user=postgres")
