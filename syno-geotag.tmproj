@@ -10,7 +10,7 @@
 			<key>filename</key>
 			<string>places.py</string>
 			<key>lastUsed</key>
-			<date>2015-04-13T21:01:00Z</date>
+			<date>2015-04-18T07:17:22Z</date>
 			<key>selected</key>
 			<true/>
 		</dict>
@@ -18,7 +18,7 @@
 			<key>filename</key>
 			<string>geo-reference.py</string>
 			<key>lastUsed</key>
-			<date>2015-04-13T21:00:46Z</date>
+			<date>2015-04-14T20:40:08Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
@@ -52,26 +52,42 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>5</integer>
+				<integer>25</integer>
 			</dict>
+			<key>columnSelection</key>
+			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>8</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>24</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>25</integer>
+			</dict>
 		</dict>
 		<key>places.py</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>14</integer>
 				<key>line</key>
-				<integer>19</integer>
+				<integer>12</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
@@ -82,11 +98,7 @@
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
-	<key>showFileHierarchyPanel</key>
-	<true/>
-	<key>treeState</key>
-	<dict/>
 	<key>windowFrame</key>
-	<string>{{68, 25}, {996, 751}}</string>
+	<string>{{68, 22}, {1149, 754}}</string>
 </dict>
 </plist>
