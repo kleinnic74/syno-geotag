@@ -2,10 +2,11 @@ import psycopg2
 import psycopg2.extras
 import geocoder
 
-from places import place
+from places import Geotags
 
 class Locations:
-    def __init__(self):
+    def __init__(self, tags):
+        self.tags = tags
         self.cache = dict()
         self.places = dict()
     
@@ -17,24 +18,20 @@ class Locations:
         if address == None:
             self.cache[id] = None
             return None
-        self.cache[id] = place((address.city, address.state, address.country))
+        self.cache[id] = self.tags.place((address.city, address.state, address.country))
         return self.cache[id]
 
 
 try:
     conn = psycopg2.connect("dbname=photo user=postgres")
     cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
-    cur.execute('SELECT id, path, lat, lng FROM photo_image')
+    cur.execute("""SELECT id, path, lat, lng LIMIT 10 FROM photo_image WHERE lat IS NOT NULL""")
     count = 0
-    l = Locations()
-    while True:
-        img = cur.fetchone()
-        if img == None:
-            break
-        if img['lat'] != None and img['lng'] != None:
-            loc = l.find(img['lat'], img['lng'])
-            print "[%s] %s: %s" % (img['id'], img['path'], loc)
-            count += 1
+    l = Locations(Geotags(conn))
+    for img in cur:
+        loc = l.find(img['lat'], img['lng'])
+        print "[%s] %s: %s" % (img['id'], img['path'], loc)
+        count += 1
     print "Found %d GPS-referenced images" % count
     
 except psycopg2.DatabaseError, e:

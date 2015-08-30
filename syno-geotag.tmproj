@@ -3,22 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>places.py</string>
+	<string>geo-reference.py</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>filename</key>
 			<string>places.py</string>
 			<key>lastUsed</key>
-			<date>2015-04-18T07:17:22Z</date>
-			<key>selected</key>
-			<true/>
+			<date>2015-05-17T15:45:06Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>geo-reference.py</string>
 			<key>lastUsed</key>
-			<date>2015-04-14T20:40:08Z</date>
+			<date>2015-08-23T19:16:55Z</date>
+			<key>selected</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>filename</key>
@@ -52,42 +52,26 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>25</integer>
+				<integer>22</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>8</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>24</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>25</integer>
-			</dict>
+			<integer>0</integer>
 		</dict>
 		<key>places.py</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>14</integer>
+				<integer>31</integer>
 				<key>line</key>
-				<integer>12</integer>
+				<integer>37</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>1</integer>
+			<integer>28</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
@@ -98,6 +82,10 @@
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
+	<key>showFileHierarchyPanel</key>
+	<true/>
+	<key>treeState</key>
+	<dict/>
 	<key>windowFrame</key>
 	<string>{{68, 22}, {1149, 754}}</string>
 </dict>
