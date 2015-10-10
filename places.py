@@ -14,6 +14,7 @@ class Place:
     
     def __str__(self):
         return "<%s[%d]>" % (self.path, self._id)
+    
 
 
 class Geotags:
@@ -29,13 +30,19 @@ class Geotags:
                  self._knownPlaces[place.path] = place
     
     def place(self, parts):
+        places = []
         uniqueParts = _make_unique(parts)
         key = ','.join(uniqueParts)
         if key in self._knownPlaces:
-            return self._knownPlaces[key]
-        return self._newPlace(uniqueParts)
+            places.append(self._knownPlaces[key])
+        else:
+            places.append(self._newPlace(uniqueParts))
+        if (len(uniqueParts) > 1):
+            places.extend(self.place(uniqueParts[1:]))
+        return places
     
     def _newPlace(self, parts):
+        print "New place: %s" % (parts)
         info = json.dumps({'parts': parts})
         self.cursor.execute("""INSERT INTO photo_label (category, name, info)
                                VALUES (%(category)s, %(name)s, %(info)s) RETURNING id""", 
